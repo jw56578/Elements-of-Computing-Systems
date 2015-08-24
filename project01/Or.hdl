@@ -15,10 +15,16 @@ CHIP Or {
     PARTS:
     // Put your code here.
     // Or = Nand(Not(a), Not(b))
-
+    //output 1 if either input is one, else 0
+    //0 =1
+    //1 = 0
     Not(in=a, out=notA);
+    //0=1
     Not(in=b, out=notB);
-
+    //1,1 = 0
+    //1,0 = 1
     Nand(a=notA, b=notB, out=out);
+    // so you can see if both inputs are 0 then the output is 0
+    //if any input is 1 then the output is 1
 
 }
