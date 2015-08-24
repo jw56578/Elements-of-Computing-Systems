@@ -14,7 +14,16 @@ CHIP And {
 
     PARTS:
     // Put your code here.
+    //output 1 only if both inputs are 1, else output 0
+    //1,1 = 0
+    //1,0 = 1
+    //0,1 = 1
+    //0,0, = 1
     Nand(a=a, b=b, out=nandOut);
+    //0 = 1
+    //1 = 0
     Not(in=nandOut, out=out);
+    //so you can compare the outputs of Nand to the inputs of Not
+    //the only way to get 1 is if both inputs are 1, so it works!
 
 }
