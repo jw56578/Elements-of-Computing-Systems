@@ -14,6 +14,10 @@ CHIP Not {
 
     PARTS:
     // Put your code here.
+    //Output the opposite of what was input
+    //Nand outputs 1 for all inputs except for 1,1
+    //1,1 = 0, which is opposite
+    //0,0 =1, which is opposite
     Nand(a=in, b=in, out=out);
 
 }
