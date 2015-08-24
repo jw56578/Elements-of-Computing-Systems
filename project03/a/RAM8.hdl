@@ -11,11 +11,19 @@
  */
 
 CHIP RAM8 {
+    //the address is a 3 bit bus because that is how many bits are needed to specify the range of possible addresses
+    //there are 8 registeres so the address can be 0,1,2,3,4,5,6,7
+    //so in binary that is 0,1,10,11,100,101,110,111
+    //you need 3 bits of space to specify the numbers 4 thru 7 which would be the last register
     IN in[16], load, address[3];
     OUT out[16];
 
     PARTS:
     // Put your code here.
+    //the purpose of dmux8way is to set the value of one output variable to true and all the rest of them to false
+    //the address will match up to the position of the out put variable 0-7
+    //if the address is 0 then loadA will be true
+    //if the address is 111, seven in decimal, then loadH will be true
     DMux8Way(in=load, sel=address, a=loadA, b=loadB, c=loadC, d=loadD, e=loadE, f=loadF, g=loadG, h=loadH);
 
     Register(in=in, load=loadA, out=outA);
