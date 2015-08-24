@@ -15,6 +15,11 @@ CHIP Bit {
 
     PARTS:
     // Put your code here.
+    //dffOut is coming from the out of the DFF from a previous cycle. 
     Mux(a=dffOut, b=in, sel=load, out=muxOut);
+    //the built in Data Flip Flop (that is created by using 2 Nand where the output of one is the input of the other creating a loop)
+    //why does this thing have 2 outs? because you can fork an output to as many things as you want
+    //its like creating variables on the fly. you could send out to dffOut1, dffOut2 to infinity
+    //dffOut is the value fed back into the chip, out is just what gets spit out to the consumer
     DFF(in=muxOut, out=dffOut, out=out);
 }
