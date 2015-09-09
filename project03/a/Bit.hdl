@@ -8,7 +8,8 @@
  * If load[t]=1 then out[t+1] = in[t]
  *              else out does not change (out[t+1]=out[t])
  */
-
+//this is where it introduces one concept that isn't explained, how you can use the output from a previous cycle as an input
+//dffOut just exists and maintains till the next cycle
 CHIP Bit {
     IN in, load;
     OUT out;
